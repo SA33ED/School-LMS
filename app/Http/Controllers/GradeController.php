@@ -25,7 +25,7 @@ class GradeController extends Controller
 
     public function store(Request $request)
     {
-     
+
             $grade = new Grade;
             $grade->name=['en' => $request->Name_en, 'ar' => $request->Name];
             $grade->notes=$request->Notes;
@@ -33,9 +33,6 @@ class GradeController extends Controller
 
             toastr()->success(trans('grades_trans.success'));
             return redirect()->route('gradesList');
-
-
-
     }
 
 
