@@ -4,5 +4,7 @@ return [
 
    'Dashboard'=>'Dashboard',
    'Grades'=>'Grades',
-   'GradesList'=>'Grades List'
+   'GradesList'=>'Grades List',
+   'me'=>'By ENG/Mohamed Saeed',
+   'classes'=>'Classes',
 ];

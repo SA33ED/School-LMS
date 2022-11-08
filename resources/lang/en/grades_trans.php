@@ -2,6 +2,7 @@
 
 return [
 'title_page'    =>'title_page',
+'pageTitle'=>'Page Title',
 'list_grade'    =>'List Grade',
 'add_grade'     =>'Add Grade',
 'edit_grade'    =>'Edit Grade',

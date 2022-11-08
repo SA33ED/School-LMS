@@ -25,14 +25,16 @@ class GradeController extends Controller
 
     public function store(Request $request)
     {
-
+        try{
             $grade = new Grade;
             $grade->name=['en' => $request->Name_en, 'ar' => $request->Name];
             $grade->notes=$request->Notes;
             $grade->save();
-
             toastr()->success(trans('grades_trans.success'));
             return redirect()->route('gradesList');
+        }catch(\Exception $e){
+            return redirect()->back()->withErrors(['error'=>$e->getMessage()]);
+        }
     }
 
 
@@ -47,9 +49,21 @@ class GradeController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        try{
+
+            $grade= Grade::find($request->id);
+            $grade->name=['en' => $request->Name_en, 'ar' => $request->Name];
+            $grade->notes=$request->Notes;
+            $grade->save();
+            toastr()->success(trans('grades_trans.success'));
+            return redirect()->route('gradesList');
+
+
+        }catch(\Exception $e){
+            return redirect()->back()->withErrors(['error'=>$e->getMessage()]);
+        }
     }
 
 

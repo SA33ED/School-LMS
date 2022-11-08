@@ -22,7 +22,8 @@ Route::group(
 
 
     Route::get('grades' ,[GradeController::class,'index'])->name('gradesList');
-    Route::post('grades',[GradeController::class,'store'])->name('gradesStore');
+    Route::post('grades/update',[GradeController::class,'update'])->name('gradesEdit');
+    Route::post('grades/store',[GradeController::class,'store'])->name('gradesStore');
 
 
 
