@@ -29,15 +29,6 @@
     <div class="col-xl-12 mb-30">
       <div class="card card-statistics h-100">
         <div class="card-body">
-            {{-- @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif --}}
             <button type="button" class="button x-small" data-toggle="modal" data-target="#exampleModal">
                 {{ trans('grades_trans.add_grade') }}
             </button>
@@ -54,8 +45,10 @@
                 </tr>
             </thead>
             <tbody>
+            {{-- START FOR EACH --}}
                 <?php $i=0; ?>
                 @foreach ($grades as $grade)
+
                     <?php $i++; ?>
                     <tr>
                         <td>{{$i}}</td>
@@ -71,6 +64,7 @@
                         </td>
 
                     </tr>
+
                         <!-- edit_modal_Grade -->
                         <div class="modal fade" id="edit{{$grade->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -84,7 +78,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <!-- add_form -->
+                                        <!-- edit_form -->
                                         <form action="{{route('gradesEdit','test')}}" method="POST">
                                             @csrf
                                             <div class="row">
@@ -118,9 +112,36 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!--delete_Modal_Grade -->
+                        <div class="modal fade" id="delete{{$grade->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">{{ trans('grades_trans.delete_grade') }}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="{{route('greadsDestroy', $grade->id)}}" method="post">
+                                            @method("DELETE")
+                                            @csrf
+                                            {{ trans('grades_trans.warning_grade') }} {{$grade->name}} {{ trans('grades_trans.how') }}
+                                            <input type="hidden" id="id" name="id" class="form-control" value="{{$grade->id}}">
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans('grades_trans.close')}}</button>
+                                                <button type="submit" class="btn btn-danger">{{trans('grades_trans.submit')}}</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                 @endforeach
 
-
+            {{-- END FOR EACH --}}
             </tbody>
             <tfoot>
                 <tr>

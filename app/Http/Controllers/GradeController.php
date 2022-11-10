@@ -10,21 +10,18 @@ use PhpParser\Node\Stmt\TryCatch;
 
 class GradeController extends Controller
 {
-    public function index()
-    {
+    public function index(){
         $grades=Grade::all();
         return view('pages.Grades.Grades',compact('grades'));
     }
 
 
-    public function create()
-    {
+    public function create(){
         //
     }
 
 
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         try{
             $grade = new Grade;
             $grade->name=['en' => $request->Name_en, 'ar' => $request->Name];
@@ -38,19 +35,16 @@ class GradeController extends Controller
     }
 
 
-    public function show($id)
-    {
+    public function show($id){
         //
     }
 
-    public function edit($id)
-    {
+    public function edit($id){
         //
     }
 
 
-    public function update(Request $request)
-    {
+    public function update(Request $request){
         try{
 
             $grade= Grade::find($request->id);
@@ -67,8 +61,10 @@ class GradeController extends Controller
     }
 
 
-    public function destroy($id)
-    {
-        //
+    public function destroy($id){
+        $Grades= Grade::find($id);
+        $Grades->delete();
+        toastr()->success(trans('grades_trans.success'));
+        return redirect()->route('gradesList');
     }
 }
