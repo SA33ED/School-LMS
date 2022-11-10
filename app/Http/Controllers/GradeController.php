@@ -22,6 +22,14 @@ class GradeController extends Controller
 
 
     public function store(Request $request){
+
+        if(Grade::where('name->ar',$request->Name)->orWhere('name->en',$request->Name_en)->exists()){
+
+            toastr()->error(trans('grades_trans.exists'));
+            return redirect()->route('gradesList');
+
+        }
+
         try{
             $grade = new Grade;
             $grade->name=['en' => $request->Name_en, 'ar' => $request->Name];

@@ -19,4 +19,5 @@ return [
 'close'         =>'Close',
 'success'=>'Done',
 'how'=>'?',
+'exists'=>'This field already exists',
 ];
