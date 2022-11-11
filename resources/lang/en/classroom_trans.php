@@ -3,6 +3,7 @@
 return [
 
     'title_page'=>'Classrooms',
+    'classname'=>'CLass Name',
     'list_classes'=>'Classrooms List',
     'add_class'=>'Add Classroom',
     'edit_class'=>'Edit Classroom',

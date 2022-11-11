@@ -14,10 +14,7 @@
                         </a>
                         <ul id="dashboard" class="collapse" data-parent="#sidebarnav">
                             <li> <a href="index.html">Dashboard 01</a> </li>
-                            <li> <a href="index-02.html">Dashboard 02</a> </li>
-                            <li> <a href="index-03.html">Dashboard 03</a> </li>
-                            <li> <a href="index-04.html">Dashboard 04</a> </li>
-                            <li> <a href="index-05.html">Dashboard 05</a> </li>
+
                         </ul>
                     </li>
                     <!-- menu title -->
@@ -44,8 +41,7 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="calendar.html">Events Calendar </a> </li>
-                            <li> <a href="calendar-list.html">List Calendar</a> </li>
+                            <li> <a href="{{route('classroomsList')}}">{{ trans('main_trans.list_classes') }} </a></li>
                         </ul>
                     </li>
                     <!-- menu item todo-->

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GradeController;
+use App\Http\Controllers\ClassroomController;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,7 @@ Route::group(
     Route::post('grades/store',[GradeController::class,'store'])->name('gradesStore');
     Route::delete('grades/{id}',[GradeController::class,'destroy'])->name('greadsDestroy');
 
+    Route::get('classrooms' ,[ClassroomController::class,'index'])->name('classroomsList');
 
 
 

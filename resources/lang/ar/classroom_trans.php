@@ -3,6 +3,7 @@
 return [
 
     'title_page'=>'الصفوف الدراسية',
+    'classname'=>'اسم الصف',
     'list_classes'=>'قائمة الصفوف الدراسية',
     'add_class'=>'اضافة صف',
     'edit_class'=>'تعديل صف',
