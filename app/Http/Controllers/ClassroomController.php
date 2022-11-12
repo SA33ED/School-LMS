@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Classroom;
+use App\Models\Grade;
 use Illuminate\Http\Request;
+use PhpParser\Builder\Class_;
 
 class ClassroomController extends Controller
 {
@@ -15,7 +17,8 @@ class ClassroomController extends Controller
     public function index()
     {
         $classroom=Classroom::all();
-        return view('pages.CLassrooms.classrooms',compact('classroom'));
+        $grades=Grade::all();
+        return view('pages.CLassrooms.classrooms',compact('classroom','grades'));
     }
 
     /**
@@ -36,7 +39,22 @@ class ClassroomController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $List_CLasses = $request->List_Classes;
+
+        try{
+            foreach ($List_CLasses as $class) {
+                $c = new Classroom;
+                $c->name = ['en' => $class['Name_class_en'],'ar'=>$class['Name']];
+                $c->grade_id = $class['Grade_id'];
+                $c->save();
+            }
+            toastr()->success(trans('grades_trans.success'));
+            return redirect(route('classroomsList'));
+
+        }catch(\Exception $e){
+            return redirect()->back()->withErrors(['error'=>$e->getMessage()]);
+        }
     }
 
     /**
@@ -68,9 +86,21 @@ class ClassroomController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        try{
+
+            $class= Classroom::find($request->id);
+            $class->name =['en' => $request->Name_class_en, 'ar' => $request->Name];
+            $class->grade_id=$request->Grade_id;
+            $class->save();
+            toastr()->success(trans('grades_trans.success'));
+            return redirect()->route('classroomsList');
+
+
+        }catch(\Exception $e){
+            return redirect()->back()->withErrors(['error'=>$e->getMessage()]);
+        }
     }
 
     /**

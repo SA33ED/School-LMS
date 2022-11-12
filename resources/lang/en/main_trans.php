@@ -19,4 +19,6 @@ return [
     'List_sections'=>'Sections list',
     'settings'=>'Settings',
     'users'=>'Users',
+    'sections'=>'Sections',
 ];
+
