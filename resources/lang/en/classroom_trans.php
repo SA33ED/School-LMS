@@ -10,8 +10,8 @@ return [
     'delete_class'=>'Delete Classroom',
     'warning'=>'Are You Sure You Want To DELELTE?',
     'submit'=>'Submit',
-    'name_class_ar'=>'Classroom name in Arabic',
-    'name_class_en'=>'Classroom name in English',
+    'name_class_ar'=>'Class name in Arabic',
+    'name_class_en'=>'Class name in English',
     'name_grade'=>'Grade Name',
     'add_row'=>'Add Row',
     'delete_row'=>'Delete Row',
@@ -19,6 +19,7 @@ return [
     'edit'=>'Edit',
     'delete'=>'Delete',
     'close'=>'Colse',
+    'sections'=>'Sections',
 
 
 ];

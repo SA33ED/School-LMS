@@ -187,7 +187,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title" id="exampleModalLabel">
-                    {{ trans('My_Classes_trans.add_class') }}
+                    {{ trans('classroom_trans.add_class') }}
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -207,7 +207,7 @@
 
                                         <div class="col">
                                             <label for="Name"
-                                                class="mr-sm-2">{{ trans('My_Classes_trans.Name_class') }}
+                                                class="mr-sm-2">{{ trans('classroom_trans.name_class_ar') }}
                                                 :</label>
                                             <input class="form-control" type="text" name="Name" required />
                                         </div>
@@ -215,7 +215,7 @@
 
                                         <div class="col">
                                             <label for="Name"
-                                                class="mr-sm-2">{{ trans('My_Classes_trans.Name_class_en') }}
+                                                class="mr-sm-2">{{ trans('classroom_trans.name_class_en') }}
                                                 :</label>
                                             <input class="form-control" type="text" name="Name_class_en" required />
                                         </div>
@@ -223,7 +223,7 @@
 
                                         <div class="col">
                                             <label for="Name_en"
-                                                class="mr-sm-2">{{ trans('My_Classes_trans.Name_Grade') }}
+                                                class="mr-sm-2">{{ trans('grades_trans.name') }}
                                                 :</label>
 
                                             <div class="box">
@@ -238,24 +238,25 @@
 
                                         <div class="col">
                                             <label for="Name_en"
-                                                class="mr-sm-2">{{ trans('My_Classes_trans.Processes') }}
+                                                class="mr-sm-2">{{ trans('classroom_trans.processes') }}
                                                 :</label>
                                             <input class="btn btn-danger btn-block" data-repeater-delete
-                                                type="button" value="{{ trans('My_Classes_trans.delete_row') }}" />
+                                                type="button" value="{{ trans('classroom_trans.delete') }}" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row mt-20">
                                 <div class="col-12">
-                                    <input class="button" data-repeater-create type="button" value="{{ trans('My_Classes_trans.add_row') }}"/>
+                                    <input class="button" data-repeater-create type="button" value="{{ trans('classroom_trans.add_row') }}"/>
+                                    
                                 </div>
 
                             </div>
 
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary"
-                                    data-dismiss="modal">{{ trans('Grades_trans.Close') }}</button>
+                                    data-dismiss="modal">{{ trans('Grades_trans.close') }}</button>
                                 <button type="submit"
                                     class="btn btn-success">{{ trans('Grades_trans.submit') }}</button>
                             </div>

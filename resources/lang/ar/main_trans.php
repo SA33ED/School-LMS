@@ -13,10 +13,13 @@ return [
     'teachers'=>'المعلمين',
     'parents'=>'اولياء الأمور',
     'accounts'=>'الحسابات',
-    'attendees'=>'الحضور والغياب',
+    'attendance'=>'الحضور والغياب',
     'exams'=>'الامتحانات',
-    'Library'=>'المكتبة',
+    'library'=>'المكتبة',
     'e-learning'=>'حصص اونلاين',
+    'List_sections'=>'قائمة الأقسام',
+    'settings'=>'الأعدادات',
+    'users'=>'المستخدمين',
 
 
 ];

@@ -12,8 +12,11 @@ return [
     'teachers'=>'Teachers',
     'parents'=>'Parents',
     'accounts'=>'Accounts',
-    'attendees'=>'Attendees',
+    'attendance'=>'Attendance',
     'exams'=>'Exams',
     'library'=>'Library',
     'e-learning'=>'E-Learning',
+    'List_sections'=>'Sections list',
+    'settings'=>'Settings',
+    'users'=>'Users',
 ];
