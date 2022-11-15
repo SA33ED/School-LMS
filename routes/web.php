@@ -32,7 +32,7 @@ Route::group(
     Route::get('classrooms' ,[ClassroomController::class,'index'])->name('classroomsList');
     Route::post('classrooms/store' ,[ClassroomController::class,'store'])->name('classroomsStore');
     Route::post('classrooms/update' ,[ClassroomController::class,'update'])->name('classroomsEdit');
-
+    Route::delete('classrooms/{id}',[ClassroomController::class,'destroy'])->name('classroomsDestroy');
 
 
 });
