@@ -73,4 +73,13 @@ class ClassroomController extends Controller
         toastr()->success(trans('grades_trans.success'));
         return redirect()->route('classroomsList');
     }
+
+    public function deleteall(Request $request){
+        $delete_all_id = explode(",", $request->delete_all_id);
+        $classes=Classroom::whereIn( 'id', $delete_all_id);
+        $classes->delete();
+        toastr()->success(trans('grades_trans.success'));
+        return redirect()->route('classroomsList');
+
+    }
 }

@@ -20,4 +20,5 @@ return [
 'success'=>'Done',
 'how'=>'?',
 'exists'=>'This field already exists',
+'error1'=>"This Grade Cannot Be Deleted Because There Are Classes Attached To It",
 ];

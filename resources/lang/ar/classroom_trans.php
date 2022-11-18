@@ -8,6 +8,7 @@ return [
     'add_class'=>'اضافة صف',
     'edit_class'=>'تعديل صف',
     'delete_class'=>'حذف صف',
+    'delete_class_checkbox'=>'حذف الصفوف المختارة',
     'warning'=>'هل انت متأكد من عملية الحذف؟',
     'submit'=>'حفظ البيانات',
     'name_class_ar'=>'اسم الصف بالعربية',

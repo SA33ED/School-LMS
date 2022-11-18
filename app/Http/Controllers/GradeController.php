@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 // use App\Http\Requests\StoreGrades;
+
+use App\Models\Classroom;
 use App\Models\Grade;
 // use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
@@ -54,6 +56,7 @@ class GradeController extends Controller
 
 
     public function update(Request $request){
+
         try{
 
             $grade= Grade::find($request->id);
@@ -71,9 +74,15 @@ class GradeController extends Controller
 
 
     public function destroy($id){
-        $Grades= Grade::find($id);
-        $Grades->delete();
-        toastr()->success(trans('grades_trans.success'));
-        return redirect()->route('gradesList');
+        $class= Classroom::where('grade_id',$id)->pluck('grade_id');
+        if($class->count() == 0){
+            $Grades= Grade::find($id);
+            $Grades->delete();
+            toastr()->success(trans('grades_trans.success'));
+            return redirect()->route('gradesList');
+        }else{
+            toastr()->error(trans('grades_trans.error1'));
+            return redirect()->route('gradesList');
+        }
     }
 }

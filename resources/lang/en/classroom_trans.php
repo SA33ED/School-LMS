@@ -8,6 +8,7 @@ return [
     'add_class'=>'Add Classroom',
     'edit_class'=>'Edit Classroom',
     'delete_class'=>'Delete Classroom',
+    'delete_class_checkbox'=>'Delete Selcted Classrooms',
     'warning'=>'Are You Sure You Want To DELELTE?',
     'submit'=>'Submit',
     'name_class_ar'=>'Class name in Arabic',
