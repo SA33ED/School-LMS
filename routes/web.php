@@ -34,6 +34,7 @@ Route::group(
     Route::post('classrooms/update' ,[ClassroomController::class,'update'])->name('classroomsEdit');
     Route::delete('classrooms/{id}',[ClassroomController::class,'destroy'])->name('classroomsDestroy');
     Route::post('classrooms/deleteall',[ClassroomController::class,'deleteall'])->name('classroomsDeleteAll');
+    Route::post('classrooms/filter',[ClassroomController::class,'filter'])->name('classroomsFilter');
 
 
 });

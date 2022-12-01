@@ -82,4 +82,10 @@ class ClassroomController extends Controller
         return redirect()->route('classroomsList');
 
     }
+
+    public function filter(Request $request){
+
+    }
+
+
 }

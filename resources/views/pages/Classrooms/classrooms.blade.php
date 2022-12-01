@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('css')
+
 @toastr_css
 @section('title')
     {{ trans('classroom_trans.title_page') }}
@@ -48,6 +49,17 @@
                     {{ trans('classroom_trans.delete_class_checkbox') }}
                 </button>
                 <br><br>
+
+                <form action="{{route('classroomsFilter')}}" method="POST">
+                    @csrf
+                    <select class="selectpicker" data-style="btn-info" name="Grade_id" required
+                            onchange="this.form.submit()">
+                        <option value="" selected disabled>{{ trans('classroom_trans.classname') }}</option>
+                        @foreach ($grades as $Grade)
+                            <option value="{{ $Grade->id }}">{{ $Grade->name }}</option>
+                        @endforeach
+                    </select>
+                </form><br>
 
                 <div class="table-responsive">
                     <table id="datatable" class="table  table-hover table-sm table-bordered p-0" data-page-length="50"
