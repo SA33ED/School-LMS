@@ -21,6 +21,8 @@ return [
     'delete'=>'Delete',
     'close'=>'Colse',
     'sections'=>'Sections',
+    'filterbygrade'=>'Search by grade',
+    'showAllClasses'=>'Show all Classrooms'
 
 
 ];

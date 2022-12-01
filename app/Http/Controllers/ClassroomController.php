@@ -80,11 +80,16 @@ class ClassroomController extends Controller
         $classes->delete();
         toastr()->success(trans('grades_trans.success'));
         return redirect()->route('classroomsList');
-
     }
 
     public function filter(Request $request){
-
+        if($request->Grade_id=="all"){
+            return redirect()->route('classroomsList');
+        }else{
+            $grades=Grade::all();
+            $classes=Classroom::where('grade_id',$request->Grade_id)->get();
+            return view('pages.Classrooms.classrooms',compact('classes','grades'));
+        }
     }
 
 

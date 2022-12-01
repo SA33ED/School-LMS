@@ -21,4 +21,6 @@ return [
     'delete'=>'حذف',
     'close'=>'اغلاق',
     'sections'=>'الأقسام',
+    'filterbygrade'=>'البحث بأسم المرحلة',
+    'showAllClasses'=>'عرض جميع الصفوف',
 ];
